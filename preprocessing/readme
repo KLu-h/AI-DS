@@ -1,0 +1,72 @@
+All the preprossing techniques and their code:-
+
+
+ Tokenization:-
+Tokenization is the process of removing sensitive data and placing unique symbols of identification in its place to retain all the essential information.
+
+CODE:-
+import nltk
+sentence_data = "The First sentence is about Python. The Second: about Django. You can learn Python,Django and Data Ananlysis here. "
+nltk_tokens = nltk.sent_tokenize(sentence_data)
+print (nltk_tokens)
+
+
+Stop-word Removal:-
+
+Stop — words are natural language words which have very little meaning such as ‘a’, ‘an’, ‘and’, ‘or’, ‘the’.
+⁃ These words take up space in a database and increase the processing time.
+⁃ They can be removed by storing an of stop-words.
+⁃ Stop-words are filtered out before processing of natural language data as they don’t reveal much information.
+
+
+Code:-
+
+import nltk
+from nltk.corpus import stopwords
+print(stopwords.words('english'))
+
+
+
+
+
+
+Stemming:-
+Stemming involves reducing the word “Stem” or base (root) from removing the suffix.
+
+code:-
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize, word_tokenize
+ps = PorterStemmer( )
+text_example = “your text goes here”
+words = word_tokenize (text_example)
+for w in words :
+print(ps.stem(w))
+
+Lemmatization:-
+
+Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words.
+
+code:-
+import nltk
+	from nltk.stem import 	WordNetLemmatizer
+	wordnet_lemmatizer = WordNetLemmatizer()
+	text = "studies studying cries cry"
+	tokenization = nltk.word_tokenize(text)
+	 for w in tokenization:
+		print("Lemma for {} is {}".format(w, wordnet_lemmatizer.lemmatize(w)))
+
+
+
+
+
+
+POS Tagging:-
+ POS tagging is a task of labelling each word in a sentence with its appropriate part of speech.
+
+Code:-
+import nltk
+from nltk import word_tokenize
+sentence = "I am going to school"
+print (nltk.pos_tag(word_tokenize(sentence)))
+
+
